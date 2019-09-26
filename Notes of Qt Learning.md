@@ -39,9 +39,7 @@ QMetaObject::Connection connect(const QObject *, PointerToMemberFunction,
 
 
 
-### 信号
-
-#### 信号定义
+### 信号定义
 
 信号在类的`声明中实现`，除了常规的**private**和**public**之外，需要定义一个类型为**signal**的。
 
@@ -58,7 +56,7 @@ signals:
 
 
 
-#### send()
+### send()
 
 定义类似如下：
 
@@ -75,7 +73,7 @@ signals:
 
 
 
-#### 接收者
+### 接收者
 
 `在Qt5中，任何成员函数/static函数/全局函数/Lambda表达式，都可以作为槽函数`
 
@@ -90,7 +88,7 @@ signals:
 
 
 
-#### 构造连接
+### 构造连接
 
 这里给出一个使用`connect()`函数来构造信号槽连接的方式：
 
@@ -103,7 +101,7 @@ QObject::connect(&newspaper, &Newspaper::newPaper,
 
 
 
-#### 发出信号
+### 发出信号
 
 ```cpp
 newspaper.send();
