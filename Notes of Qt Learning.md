@@ -37,3 +37,76 @@ QMetaObject::Connection connect(const QObject *, PointerToMemberFunction,
 
 [Qt学习之路2 信号槽](https://www.devbean.net/2012/08/qt-study-road-2-signal-slot/ "https://www.devbean.net/2012/08/qt-study-road-2-signal-slot/")
 
+
+
+### 信号
+
+#### 信号定义
+
+信号在类的`声明中实现`，除了常规的**private**和**public**之外，需要定义一个类型为**signal**的。
+
+类似如下的代码：
+
+```cpp
+signals:
+    void newPaper(const QString &name);
+```
+
+其中信号就是函数名，参数是该类需要让外界知道的数据。
+
+信号不需要在cpp文件中添加任何实现。
+
+
+
+#### send()
+
+定义类似如下：
+
+```cpp
+	void send()
+    {
+        emit newPaper(m_name);
+    }
+```
+
+其中`emit`为Qt的关键字，含义是发出newPaper信号，感兴趣的接收者会关注这个信号。
+
+同时参数为随信号传递出的信息，供接收者参考。
+
+
+
+#### 接收者
+
+`在Qt5中，任何成员函数/static函数/全局函数/Lambda表达式，都可以作为槽函数`
+
+作为例子，给出一个实现：
+
+```cpp
+	void receiveNewspaper(const QString & name) // 称为槽函数
+    {
+        qDebug() << "Receives Newspaper: " << name;
+    }
+```
+
+
+
+#### 构造连接
+
+这里给出一个使用`connect()`函数来构造信号槽连接的方式：
+
+```cpp
+Newspaper newspaper("Newspaper A"); // 发出信号的类
+Reader reader; // 接收并响应信号的类
+QObject::connect(&newspaper, &Newspaper::newPaper,
+                     &reader,    &Reader::receiveNewspaper);
+```
+
+
+
+#### 发出信号
+
+```cpp
+newspaper.send();
+```
+
+使用如上调用就可以触发一次信号。
