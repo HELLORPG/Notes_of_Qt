@@ -108,3 +108,45 @@ newspaper.send();
 ```
 
 使用如上调用就可以触发一次信号。
+
+
+
+## Qt 模块简介
+
+[Qt学习之路2 Qt模块简介](https://www.devbean.net/2012/08/qt-study-road-2-modules/ "https://www.devbean.net/2012/08/qt-study-road-2-modules/")
+
+
+
+## MainWindow 主窗口
+
+`含义与MFC的MainWindow保持一致 ，是应用最外的窗体`
+
+### 窗口划分
+
+![mw-struct](img/mw-struct.png)
+
+如上图所示，MainWindow被分割为如上几个部分，可以进行分别的操作。
+
+Central Widget是窗口中的工作区。
+
+
+
+[Qt学习之路2 MainWindow简介](https://www.devbean.net/2012/08/qt-study-road-2-mainwindow/ "https://www.devbean.net/2012/08/qt-study-road-2-mainwindow/")
+
+
+
+## Action 动作
+
+### 介绍
+
+Qt中使用`Action`类来定义动作，这个类就代表了窗口的一个**动作**。
+
+这个动作可能显示在菜单中，作为一个菜单项；也可能在工具栏，作为一个工具栏项。二无论是在哪里，用户点击之后执行的反应都是一样的。（也正因如此，Qt没有设置专门的菜单项类或者工具栏项类）
+
+
+
+### QAction
+
+
+
+[Qt学习之路2 添加动作](https://www.devbean.net/2012/08/qt-study-road-2-action/ "https://www.devbean.net/2012/08/qt-study-road-2-action/")
