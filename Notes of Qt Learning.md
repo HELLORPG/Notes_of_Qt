@@ -123,7 +123,7 @@ newspaper.send();
 
 ### 窗口划分
 
-![mw-struct](img/mw-struct.png)
+![mw-struct](./img/mw-struct.png)
 
 如上图所示，MainWindow被分割为如上几个部分，可以进行分别的操作。
 
