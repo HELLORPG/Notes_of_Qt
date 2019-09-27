@@ -61,7 +61,7 @@ signals:
 定义类似如下：
 
 ```cpp
-    void send()
+void send()
     {
         emit newPaper(m_name);
     }
@@ -80,7 +80,7 @@ signals:
 作为例子，给出一个实现：
 
 ```cpp
-    void receiveNewspaper(const QString & name) // 称为槽函数
+void receiveNewspaper(const QString & name) // 称为槽函数
     {
         qDebug() << "Receives Newspaper: " << name;
     }
