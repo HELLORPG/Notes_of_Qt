@@ -147,6 +147,75 @@ Qt中使用`Action`类来定义动作，这个类就代表了窗口的一个**�
 
 ### QAction
 
+定义的例子如下
+
+```cpp
+#include <QMainWindow>
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+public:
+    MainWindow(QWidget *parent = 0);
+    ~MainWindow();
+
+private:
+    void open();
+
+    QAction *openAction;
+};
+```
+
+```cpp
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent)
+{
+    setWindowTitle(tr("RPG Window"));
+
+    openAction = new QAction(QIcon(":/images/doc-open"), tr("&Open..."), this);
+    // tr中的“&”代表了快捷键
+    openAction->setShortcuts(QKeySequence::Open);
+    openAction->setStatusTip(tr("Open an existing file"));
+    connect(openAction, &QAction::triggered, this, &MainWindow::open);
+
+    QMenu *file = menuBar()->addMenu(tr("&File"));
+    file->addAction(openAction);
+
+    QToolBar *toolBar = addToolBar(tr("&File"));
+    toolBar->addAction(openAction);
+    // 使用如上两段，可以增加action到目录或者工具栏。
+
+    statusBar() ;
+}
+
+MainWindow::~MainWindow()
+{
+}
+
+void MainWindow::open()
+{
+    QMessageBox::information(this, tr("Information"), tr("Open"));
+}
+```
+
+#### QAction.setShortcut()
+
+用于设置动作的快捷键，其中可以使用`QKeySequence()`，可以避免不同物理机上的键盘不一致而导致的快捷键不可用，是通用化的函数。
+
+#### QAction.setStatusTip()
+
+当用户鼠标滑过图标的时候，在下方status显示的相应提示。
+
+#### QAction.triggered()
+
+触发信号，用于连接信号槽。
+
+在connect中写作**&QAction::triggered**
+
+
+
+
+
 
 
 [Qt学习之路2 添加动作](https://www.devbean.net/2012/08/qt-study-road-2-action/ "https://www.devbean.net/2012/08/qt-study-road-2-action/")
