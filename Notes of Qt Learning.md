@@ -263,3 +263,9 @@ void MainWindow::open()
 
 [Qt学习之路2 对象模型](https://www.devbean.net/2012/09/qt-study-road-2-objects-model/ "https://www.devbean.net/2012/09/qt-study-road-2-objects-model/")
 
+
+
+
+
+## 布局管理器
+
