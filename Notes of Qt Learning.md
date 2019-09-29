@@ -111,9 +111,13 @@ newspaper.send();
 
 
 
+
+
 ## Qt 模块简介
 
 [Qt学习之路2 Qt模块简介](https://www.devbean.net/2012/08/qt-study-road-2-modules/ "https://www.devbean.net/2012/08/qt-study-road-2-modules/")
+
+
 
 
 
@@ -132,6 +136,8 @@ Central Widget是窗口中的工作区。
 
 
 [Qt学习之路2 MainWindow简介](https://www.devbean.net/2012/08/qt-study-road-2-mainwindow/ "https://www.devbean.net/2012/08/qt-study-road-2-mainwindow/")
+
+
 
 
 
@@ -214,8 +220,46 @@ void MainWindow::open()
 
 
 
-
-
-
-
 [Qt学习之路2 添加动作](https://www.devbean.net/2012/08/qt-study-road-2-action/ "https://www.devbean.net/2012/08/qt-study-road-2-action/")
+
+
+
+
+
+## 资源文件
+
+[Qt学习之路2 资源文件](https://www.devbean.net/2012/08/qt-study-road-2-resource-files/ "https://www.devbean.net/2012/08/qt-study-road-2-resource-files/")
+
+
+
+
+
+## 对象模型
+
+### QObject
+
+**QObject**就是Qt中的对象类型。
+
+当你创建一个QObject的时候，会接收一个QObject指针作为参数，其实作用是作为一个父对象。
+
+`在Qt中，父对象消亡之后，其所有的子对象也都会消亡`
+
+可以使用QObject::dumpObjectTree()和QObject::dumpObjectInfo()进行这方面的调试。
+
+
+
+### QWidget
+
+**QWidget**是Qt中所有能够显示的组件的父类，继承自QObject。
+
+
+
+### 注意
+
+1. 最好在创建一个对象的时候就指定其`parent`对象。
+2. 放心大胆在堆上创建对象（new）。
+
+
+
+[Qt学习之路2 对象模型](https://www.devbean.net/2012/09/qt-study-road-2-objects-model/ "https://www.devbean.net/2012/09/qt-study-road-2-objects-model/")
+
