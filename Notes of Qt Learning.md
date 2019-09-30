@@ -269,3 +269,13 @@ void MainWindow::open()
 
 ## 布局管理器
 
+[Qt学习之路2 布局管理器](https://www.devbean.net/2012/09/qt-study-road-2-layout/ "https://www.devbean.net/2012/09/qt-study-road-2-layout/")
+
+
+
+
+
+## 对话框
+
+[Qt学习之路2 对话框简介](https://www.devbean.net/2012/09/qt-study-road-2-dialogs-intro/ "https://www.devbean.net/2012/09/qt-study-road-2-dialogs-intro/")
+
